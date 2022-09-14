@@ -3,11 +3,9 @@
 /**
  * main - entry point
  *
- * print alphabet in lowercase followed by new line using the _putchar function
+ * print_alphabet: prints a-z  followed by new line using the _putchar function
  *
  */
-int main(void)
-
 void print_alphabet(void)
 {
 	int he;
