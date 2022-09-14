@@ -1,8 +1,10 @@
 #include "main.h"
 
 /**
- * print alphabet in lowercae followed by new line using _putchar function
+ * main - entry point
  *
+ * description: print alphabet in lowercase followed by new line using the _putchar function
+ * 
  */
 
 void print_alphabet(void)
