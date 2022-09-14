@@ -3,9 +3,10 @@
 /**
  * main - entry point
  *
- * description: print alphabet in lowercase followed by new line using the _putchar function
- * 
+ * print alphabet in lowercase followed by new line using the _putchar function
+ *
  */
+int main(void)
 
 void print_alphabet(void)
 {
