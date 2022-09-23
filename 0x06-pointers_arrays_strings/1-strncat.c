@@ -22,7 +22,7 @@ char *_strncat(char *dest, char *src, int n)
 	 * terminated
 	 */
 
-	while(dest[i++])
+	while (dest[i++])
 	{
 		b++;
 	}
