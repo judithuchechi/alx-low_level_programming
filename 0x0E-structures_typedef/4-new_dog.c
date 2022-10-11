@@ -20,13 +20,13 @@ int _strlen(char *s)
 }
 
 /**
- * _strcpy - function to copy string from source to destination
+ * _strcopy - function to copy string from source to destination
  *@dest: pointer to destinatioin of string to be copied
  *@src: pointer to source of string to be copied
  * Return: return the value at dest
  */
 
-char *_strcpy(char *dest, char *src)
+char *_strcopy(char *dest, char *src)
 {
 	int a;
 
@@ -48,34 +48,33 @@ char *_strcpy(char *dest, char *src)
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *newd;
+	dog_t *doggo;
 
-	newd = malloc(sizeof(struct dog));
-	if (newd == NULL)
+	if (name == NULL || age < 0 || owner == NULL)
 		return (NULL);
 
-	if (name == NULL)
+	doggo = malloc(sizeof(dog_t));
+	if (doggo == NULL)
+		return (NULL);
+
+	doggo->name = malloc(sizeof(char) * (_strlen(name) + 1));
+	if (doggo->name == NULL)
 	{
-		free(newd);
+		free(doggo);
 		return (NULL);
 	}
-	newd->name = malloc(sizeof(char) * (_strlen(name) + 1));
-	if (newd->name == NULL)
-		return (NULL);
-	_strcpy(newd->name, name);
 
-	newd->age = age;
-
-	if (owner == NULL)
+	doggo->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
+	if (doggo->owner == NULL)
 	{
-		free(newd->owner);
-		free(newd);
+		free(doggo->name);
+		free(doggo);
 		return (NULL);
 	}
-	newd->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
-	if (newd->owner == NULL)
-		return (NULL);
-	_strcpy(newd->owner, owner);
 
-	return (newd);
+	doggo->name = _strcopy(doggo->name, name);
+	doggo->age = age;
+	doggo->owner = _strcopy(doggo->owner, owner);
+
+	return (doggo);
 }
