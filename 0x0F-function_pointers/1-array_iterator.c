@@ -18,8 +18,10 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 	if (array == NULL)
 		return;
 	/* can also use this: */
-	/* if (array == NULL || action == NULL)
-		return; */
+	/*
+	 * if (array == NULL || action == NULL)
+		return;
+	 */
 
 	for (count = 0; count < size; count++)
 	{
@@ -27,8 +29,10 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 	}
 }
 
-	/* OR  while (size-- > 0)
+	/*
+	 * OR  while (size-- > 0)
 	{
 		action(*array);
 		array++;
-	} */
+	}
+	 */
