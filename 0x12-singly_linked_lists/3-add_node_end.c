@@ -8,7 +8,6 @@
  *
  * Return: address of new element or NULL if function fails.
  */
-
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *NewNode;
@@ -19,30 +18,22 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	NewNode = malloc(sizeof(list_t));
 	if (NewNode == NULL)
-	{
 		return (NULL);
-	}
 
 	String = strdup(str);
 	if (String == NULL)
-	{
 		free(NewNode);
 		return (NULL);
-	}
 
 	for (len = 0; str[len];)
-	{
 		len++;
-	}
 
 	NewNode->str = String;
 	NewNode->len = len;
 	NewNode->next = NULL;
 
 	if (*head == NULL)
-	{
 		*head = NewNode;
-	}
 	else
 	{
 		ListHead = *head;
@@ -53,6 +44,5 @@ list_t *add_node_end(list_t **head, const char *str)
 
 		ListHead->next = NewNode;
 	}
-
 	return (NewNode);
 }
